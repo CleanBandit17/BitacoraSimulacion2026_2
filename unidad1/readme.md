@@ -54,6 +54,222 @@ La IA generativa se utilizó como apoyo para proponer la arquitectura inicial de
 
 ---
 
-### Link de P5.js con el código completo
+### Código de P5.js
+```js
+let particles = [];
+let influence = 0;
 
-https://editor.p5js.org/natureofcode/sketches/u4vTwZuhT
+function setup() {
+  createCanvas(540, 960);
+  background(5);
+
+  for (let i = 0; i < 180; i++) {
+    particles.push(new Particle());
+  }
+}
+
+function draw() {
+
+  // No limpiamos completamente el fondo
+  // para crear estelas
+  background(5, 12);
+
+  influence = map(
+    dist(mouseX, mouseY, width / 2, height / 2),
+    0,
+    width / 2,
+    1,
+    0
+  );
+
+  influence = constrain(influence, 0, 1);
+
+  drawConnections();
+
+  for (let p of particles) {
+    p.update();
+    p.display();
+  }
+
+  drawVisitor();
+}
+
+function drawConnections() {
+
+  // Cuando la influencia es muy alta
+  // dejamos de dibujar conexiones.
+  if (influence > 0.75) return;
+
+  strokeWeight(1);
+
+  for (let i = 0; i < particles.length; i++) {
+
+    for (let j = i + 1; j < particles.length; j++) {
+
+      let d = dist(
+        particles[i].pos.x,
+        particles[i].pos.y,
+        particles[j].pos.x,
+        particles[j].pos.y
+      );
+
+      if (d < 40) {
+
+        let alpha = map(d, 0, 40, 80, 0);
+
+        stroke(255, alpha);
+
+        line(
+          particles[i].pos.x,
+          particles[i].pos.y,
+          particles[j].pos.x,
+          particles[j].pos.y
+        );
+      }
+    }
+  }
+}
+
+function drawVisitor(){
+
+  noFill();
+
+  stroke(255,0,0,120);
+
+  strokeWeight(2);
+
+  circle(mouseX,mouseY,60+influence*120);
+
+}
+
+class Particle {
+
+  constructor() {
+
+    this.pos = createVector(
+      randomGaussian(width / 2, width / 8),
+      randomGaussian(height / 2, height / 8)
+    );
+
+    this.previous = this.pos.copy();
+
+    this.offset = random(1000);
+
+    this.size = random(2, 5);
+  }
+
+  update() {
+
+    this.previous = this.pos.copy();
+
+    // POSIBILIDAD
+    let angle = random(TWO_PI);
+    let randomStep = p5.Vector.fromAngle(angle);
+
+    // TENDENCIA
+    let tendency = createVector(0.25, 0);
+    randomStep.add(tendency);
+
+    // NORMALIDAD + PERLIN
+    let n = noise(this.offset, frameCount * 0.003);
+
+    let perlinAngle = map(n, 0, 1, -PI, PI);
+
+    let perlin = p5.Vector.fromAngle(perlinAngle);
+
+    let velocity = p5.Vector.add(randomStep, perlin);
+
+    velocity.setMag(1.4);
+
+    // EXCEPCIÓN
+    let levyProbability = 0.002 + influence * 0.03;
+
+    if (random() < levyProbability) {
+
+      let jump = random(70, 180);
+
+      let dir = p5.Vector.random2D();
+
+      dir.mult(jump);
+
+      this.pos.add(dir);
+    }
+
+    // INFLUENCIA
+    if (influence > 0) {
+
+      let mouse = createVector(mouseX, mouseY);
+
+      let attraction = p5.Vector.sub(mouse, this.pos);
+
+      attraction.normalize();
+
+      attraction.mult(influence * 1.8);
+
+      velocity.add(attraction);
+    }
+
+    this.pos.add(velocity);
+
+    this.offset += 0.01;
+
+    // BORDES
+    if (this.pos.x < 0) this.pos.x = width;
+    if (this.pos.x > width) this.pos.x = 0;
+    if (this.pos.y < 0) this.pos.y = height;
+    if (this.pos.y > height) this.pos.y = 0;
+  }
+
+  display() {
+
+  let dMouse = dist(this.pos.x, this.pos.y, mouseX, mouseY);
+
+  // Color dinámico
+  let r = 255;
+  let g = map(dMouse,0,180,40,255);
+  let b = map(dMouse,0,180,40,255);
+
+  g = constrain(g,40,255);
+  b = constrain(b,40,255);
+
+  // Cuando la influencia es alta,
+  // todas se vuelven rojas.
+  if(influence > 0.75){
+
+    r = 255;
+    g = 40;
+    b = 40;
+
+  }
+
+  // Estela
+  stroke(r,g,b,50);
+  strokeWeight(1.5);
+
+  line(
+    this.previous.x,
+    this.previous.y,
+    this.pos.x,
+    this.pos.y
+  );
+
+  // Halo
+  noStroke();
+  fill(r,g,b,50);
+  circle(
+    this.pos.x,
+    this.pos.y,
+    this.size*3
+  );
+
+  // Núcleo
+  fill(r,g,b,220);
+  circle(
+    this.pos.x,
+    this.pos.y,
+    this.size
+  );
+
+}
+}
+```
