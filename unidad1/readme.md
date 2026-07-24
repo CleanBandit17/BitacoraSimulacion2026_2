@@ -273,3 +273,16 @@ class Particle {
 }
 }
 ```
+---
+
+### Autoevaluación
+
+| Criterio | Cumplo | No cumplo | Evidencia |
+|-----------|:------:|:---------:|-----------|
+| **Encargo completo:** interpreto los cinco momentos dentro de un mismo sistema visual. | ☑️ | ☐ | La experiencia integra los cinco momentos (posibilidad, tendencia, normalidad, excepción e influencia) dentro de un único sistema de partículas, sin dividir el proyecto en escenas independientes. |
+| **Simulación con intención:** utilizo al menos tres conceptos de la unidad para comunicar las ideas del encargo. | ☑️ | ☐ | Se implementaron caminata aleatoria, distribución normal (`randomGaussian()`), ruido Perlin y saltos de Lévy para construir los diferentes comportamientos del sistema. |
+| **Interacción significativa:** la interacción modifica el comportamiento o las probabilidades del sistema, que también funciona sin intervención. | ☑️ | ☐ | El cursor modifica las probabilidades del sistema aumentando la influencia sobre las partículas y los eventos excepcionales, mientras la simulación continúa funcionando de manera autónoma cuando no hay interacción. |
+| **Prototipo funcional:** la experiencia puede ejecutarse y recorrerse completa sin errores que impidan comprenderla. | ☑️ | ☐ | El prototipo funciona correctamente en p5.js. Durante el desarrollo se optimizó el rendimiento para evitar bloqueos cuando las partículas convergen hacia el centro. |
+| **Proceso documentado:** la bitácora evidencia avances, decisiones, dificultades, soluciones, uso de IA y enlace al prototipo. | ☑️ | ☐ | La bitácora documenta la intención conceptual, el proceso de diseño, las versiones intermedias, las dificultades encontradas, las soluciones implementadas, las evidencias visuales y el uso de IA como apoyo durante el desarrollo. |
+
+Nota: 4.3
