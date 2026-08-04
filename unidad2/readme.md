@@ -376,4 +376,64 @@ Cada ejecución será diferente, pero todas seguirán explorando la misma tensi�
 
 
 
+# 7. Variabilidad
 
+Uno de los principios fundamentales del diseño generativo es que el sistema nunca produce exactamente el mismo resultado dos veces. En este proyecto, la variabilidad no consiste en generar resultados completamente aleatorios, sino en permitir que un mismo conjunto de reglas produzca múltiples manifestaciones sin perder su identidad conceptual.
+
+Cada ejecución del sistema comienza con una distribución inicial diferente de las partículas. A partir de esa configuración, las pequeñas diferencias en posición, distancia y dirección generan trayectorias únicas que evolucionan de manera distinta con el paso del tiempo.
+
+Además de esta variabilidad inicial, el usuario puede modificar distintos parámetros mediante deslizadores. Estas variables no controlan directamente el comportamiento de las partículas, sino que alteran las reglas bajo las cuales interactúan.
+
+---
+
+## Variables del sistema
+
+### ❤️ Intensidad de la búsqueda
+
+Modifica la fuerza con la que las partículas Buscadoras persiguen a las partículas Enfocadas.
+
+Valores altos generan comportamientos más insistentes y aumentan la probabilidad de rechazo, mientras que valores bajos producen interacciones más moderadas.
+
+---
+
+### 😰 Miedo al rechazo
+
+Controla la cautela de las partículas Buscadoras.
+
+Al aumentar este parámetro, las partículas reducen la intensidad de su persecución y mantienen una mayor distancia antes de volver a acercarse, modificando el ritmo general de las interacciones.
+
+---
+
+### 🌱 Desarrollo personal
+
+Incrementa la velocidad y la capacidad de exploración de las partículas Enfocadas.
+
+Como consecuencia, recorren una mayor parte del espacio y aumentan las posibilidades de generar encuentros espontáneos sin necesidad de perseguir a otras partículas.
+
+---
+
+### 💰 Incentivo económico
+
+Modifica la intensidad de la atracción que sienten las partículas Enfocadas hacia las entidades que representan Intereses Económicos.
+
+Cuando este valor aumenta, parte del sistema reorganiza sus trayectorias alrededor de dichos incentivos, alterando la frecuencia y distribución de las conexiones emergentes.
+
+---
+
+## Variabilidad emergente
+
+Incluso cuando los deslizadores permanecen exactamente en la misma posición, el comportamiento del sistema nunca es idéntico entre dos ejecuciones.
+
+Las diferencias en la distribución inicial de las partículas y en la secuencia de interacciones generan agrupaciones, encuentros, rechazos y reorganizaciones diferentes en cada simulación.
+
+Esto significa que el usuario no observa una animación repetitiva, sino distintas manifestaciones de un mismo sistema de reglas.
+
+---
+
+## Identidad del sistema
+
+Aunque cada ejecución produce trayectorias, agrupaciones y conexiones diferentes, todas conservan la misma identidad conceptual.
+
+Las partículas continúan respondiendo a la misma matriz de relaciones, las conexiones siguen emergiendo únicamente a partir de encuentros espontáneos y los factores externos mantienen el mismo papel dentro del sistema.
+
+En consecuencia, la variabilidad no modifica la esencia del proyecto, sino que demuestra cómo un mismo conjunto de reglas puede producir una gran diversidad de comportamientos sin perder la intención de diseño.
