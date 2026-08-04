@@ -463,3 +463,55 @@ https://editor.p5js.org/ibanezherrerajuandavid17/sketches/vIoSbbIok
 
 ## Rúbrica
 
+## Autoevaluación y Sustentación del Reto de Diseño
+
+### Tabla de Autoevaluación
+
+| Criterio | Peso | Valoración | Aporte |
+| :--- | :---: | :---: | :---: |
+| La intención es clara y perceptible en el comportamiento. | 20% | 95% | 0.190 |
+| Los tipos, cantidades, matriz y parámetros están justificados desde la intención. | 25% | 100% | 0.250 |
+| Comprendo y puedo modificar el funcionamiento técnico del sistema. | 20% | 95% | 0.190 |
+| El sistema produce variaciones con una identidad reconocible. | 15% | 95% | 0.1425 |
+| Experimenté, comparé, seleccioné y descarté con criterios claros. | 10% | 100% | 0.100 |
+| Puedo distinguir y sustentar lo diseñado y lo emergente. | 10% | 100% | 0.100 |
+| **Total** | **100%** | **97.25%** | **0.9725** |
+
+**Cálculos de evaluación:**
+* $\text{Aporte} = \frac{\text{Valoración} \times \text{Peso}}{100}$
+* $\text{Puntaje Total} = 97.25$
+* **Nota Propuesta:** $\frac{97.25}{20} = \mathbf{4.86} \approx \mathbf{4.9}$
+
+---
+
+### Sustentación de la Autoevaluación
+
+#### 1. La intención es clara y perceptible en el comportamiento (20% — Valoración: 95%)
+La contradicción conceptual no depende de representación simbólica o elementos figurativos, sino del comportamiento físico de las partículas. La premisa de que *"la persecución activa genera rechazo y dificulta la estabilidad"* se manifiesta directamente en la simulación: al incrementar la intensidad de búsqueda de los Buscadores, se activa la respuesta de repulsión de los Enfocados, provocando la dispersión del sistema. Por el contrario, los vínculos emergen únicamente cuando los Enfocados coinciden mediante sus propios recorridos autónomos.
+
+#### 2. Los tipos, cantidades, matriz y parámetros están justificados desde la intención (25% — Valoración: 100%)
+Todas las decisiones de parametrización responden a la intención de diseño:
+* **Relación asimétrica principales:** Buscadores $\rightarrow$ Enfocados (`+0.85`) frente a Enfocados $\rightarrow$ Buscadores (`-0.60`) para modelar la tensión entre persecución e insatisfacción/rechazo.
+* **Coexistencia suave:** Enfocados $\rightarrow$ Enfocados (`+0.15`), permitiendo la aproximación paulatina sin colapsar las partículas en un único punto.
+* **Sensibilidad a factores externos:** La fuerza Enfocados $\rightarrow$ Intereses Económicos se controla dinámicamente mediante el deslizador correspondiente, evidenciando cómo un incentivo del entorno altera las trayectorias y reduce la probabilidad de encuentros espontáneos.
+* **Estabilidad física:** Inclusión de fricción y límites de velocidad máxima para garantizar un sistema dinámico estable sin aceleraciones infinitas.
+
+#### 3. Comprendo y puedo modificar el funcionamiento técnico del sistema (20% — Valoración: 95%)
+El sistema implementa el modelo **Motion 101** (Posición, Velocidad y Aceleración). En cada cuadro de la simulación, se calculan las fuerzas locales basadas en la distancia euclidiana entre entidades dentro de un radio de interacción acotado:
+
+$$\vec{F} = \text{Matriz}[i][j] \times \text{Normalización}(\vec{d})$$
+
+Se integraron factores de amortiguamiento y restricciones de velocidad (`maxSpeed`) para mantener la estabilidad del algoritmo. El código está estructurado de manera modular, lo que facilita la modificación en tiempo real de los parámetros de fuerza, fricción y respuesta a las entradas del usuario.
+
+#### 4. El sistema produce variaciones con una identidad reconocible (15% — Valoración: 95%)
+El uso de distintas semillas iniciales genera trayectorias y distribuciones espaciales únicas en cada ejecución. A pesar de esta variabilidad, el sistema conserva su identidad conceptual gracias a sus **invariantes**: la asimetría de rechazo, la pasividad de los Intereses Económicos y la naturaleza puramente emergente de las Conexiones. Las variaciones en los parámetros reconfiguran la dinámica colectiva sin destruir el significado del sistema.
+
+#### 5. Experimenté, comparé, seleccioné y descarté con criterios claros (10% — Valoración: 100%)
+El desarrollo del proyecto incluyó descartes fundamentados en la intención:
+* **Descarte de especie "Conexión":** Se evaluó representar las conexiones como una población independiente, pero se descartó por determinar el resultado de manera explícita en lugar de permitir su emergencia.
+* **Descarte de simetría de atracción:** Se eliminaron las fuerzas de atracción bidireccionales entre Buscadores y Enfocados, ya que generaban agrupamientos estáticos que eliminaban la tensión del sistema.
+* **Ajuste de poblaciones:** Se seleccionaron tres tipos de entidades para preservar la claridad del comportamiento colectivo sin introducir complejidad innecesaria.
+
+#### 6. Puedo distinguir y sustentar lo diseñado y lo emergente (10% — Valoración: 100%)
+* **Lo diseñado:** La matriz de interacciones, las reglas de distancia local, la fricción, las velocidades máximas y la modificación de fuerzas a través de las entradas del usuario.
+* **Lo emergente:** La aparición temporal de vínculos (halos de conexión), los patrones de persecución en espiral y la reorganización de la población hacia los Intereses Económicos cuando aumenta el incentivo externo.
