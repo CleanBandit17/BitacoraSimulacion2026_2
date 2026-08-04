@@ -309,3 +309,69 @@ No existe un estado final ni una solución única. El sistema permanece en evolu
 La repetición constante de estas reglas permite que el comportamiento global del sistema no sea programado explícitamente, sino que emerja de la interacción local entre las partículas y de las modificaciones realizadas sobre sus parámetros.
 
 De esta manera, fenómenos como el rechazo, la formación de conexiones espontáneas o la influencia de incentivos externos no son animaciones predefinidas, sino consecuencias naturales de las reglas que gobiernan el sistema.
+
+# 6. Invariantes
+
+Las invariantes corresponden a los principios fundamentales que definen la identidad del sistema. Aunque cada ejecución produce configuraciones diferentes debido a la aleatoriedad y a la interacción del usuario, existen reglas que permanecen constantes y garantizan que el comportamiento observado siga representando la misma intención de diseño.
+
+---
+
+## 1. Las entidades mantienen su identidad
+
+Cada población conserva siempre su comportamiento característico.
+
+- Las partículas **Buscadoras** continúan orientando su movimiento hacia la búsqueda activa de conexiones.
+- Las partículas **Enfocadas** priorizan su propio recorrido y no persiguen directamente a otras partículas.
+- Las partículas de **Intereses Económicos** permanecen como entidades pasivas que únicamente influyen cuando el parámetro correspondiente aumenta.
+
+Estas características nunca cambian, independientemente de los valores de los deslizadores.
+
+---
+
+## 2. La matriz de relaciones conserva su estructura
+
+Las relaciones entre las distintas poblaciones siempre mantienen la misma lógica conceptual.
+
+Los deslizadores modifican únicamente la intensidad de algunas fuerzas, pero nunca alteran el significado de las relaciones fundamentales del sistema.
+
+Por ejemplo, las partículas Buscadoras siempre sentirán atracción hacia las Enfocadas, mientras que las Enfocadas responderán con una tendencia al rechazo cuando perciban una búsqueda excesivamente insistente.
+
+---
+
+## 3. Las conexiones siempre son un comportamiento emergente
+
+Las conexiones nunca aparecen porque el sistema las cree directamente.
+
+Únicamente pueden surgir cuando las reglas de interacción permiten que dos partículas enfocadas permanezcan próximas durante el tiempo suficiente.
+
+Este principio se mantiene constante en todas las ejecuciones y constituye uno de los elementos centrales de la propuesta conceptual.
+
+---
+
+## 4. El comportamiento depende de reglas locales
+
+Ninguna partícula conoce el estado global del sistema ni posee un objetivo predefinido.
+
+Cada entidad toma decisiones únicamente a partir de las partículas que se encuentran dentro de su radio de interacción y de las fuerzas definidas por la matriz de relaciones.
+
+El comportamiento colectivo siempre emerge de la suma de estas interacciones locales.
+
+---
+
+## 5. El sistema permanece en evolución continua
+
+No existe un estado final, una configuración perfecta o un equilibrio definitivo.
+
+Mientras la simulación permanezca en ejecución, las partículas continuarán interactuando, reorganizando sus trayectorias y generando nuevas configuraciones.
+
+El sistema nunca deja de evolucionar.
+
+---
+
+## Reflexión
+
+Estas invariantes garantizan que, aunque el usuario modifique parámetros como la intensidad de la búsqueda, el miedo al rechazo, el desarrollo personal o el incentivo económico, la identidad conceptual del sistema permanezca intacta.
+
+Cada ejecución será diferente, pero todas seguirán explorando la misma tensión: cómo distintas reglas de interacción pueden dar lugar a dinámicas de búsqueda, rechazo, influencia externa y encuentros espontáneos.
+
+
