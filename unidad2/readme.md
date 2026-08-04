@@ -375,3 +375,5 @@ Estas invariantes garantizan que, aunque el usuario modifique parámetros como l
 Cada ejecución será diferente, pero todas seguirán explorando la misma tensión: cómo distintas reglas de interacción pueden dar lugar a dinámicas de búsqueda, rechazo, influencia externa y encuentros espontáneos.
 
 
+
+
