@@ -66,8 +66,6 @@ Esta decisión busca reforzar la idea central del proyecto: las conexiones no es
 
 ---
 
-# 2. Entidades
-
 | Entidad | Representación | Comportamiento principal |
 |----------|----------------|--------------------------|
 | ❤️ Buscadores | Búsqueda activa del afecto | Persiguen constantemente a las partículas enfocadas, generando dinámicas de atracción y rechazo. |
@@ -75,3 +73,92 @@ Esta decisión busca reforzar la idea central del proyecto: las conexiones no es
 | 💰 Intereses Económicos | Incentivos externos | Permanecen pasivos y atraen a las partículas enfocadas cuando aumenta el parámetro de incentivo económico. |
 
 > **Nota de diseño:** Las conexiones no son una entidad independiente, sino un comportamiento emergente del sistema. Su aparición depende exclusivamente de las reglas de interacción entre las partículas y de las condiciones que se generan durante la simulación.
+
+
+# 3. Relaciones
+
+Las relaciones constituyen el núcleo del sistema generativo. Cada población de partículas responde de manera diferente ante las demás mediante fuerzas de atracción, repulsión o indiferencia. Estas relaciones no buscan representar comportamientos individuales, sino explorar cómo distintas reglas de interacción producen dinámicas colectivas emergentes.
+
+La intensidad de cada interacción se encuentra normalizada entre **-1** (repulsión máxima) y **1** (atracción máxima), donde los valores cercanos a cero representan una influencia muy baja o indiferencia.
+
+---
+
+## Matriz de relaciones
+
+|                     | ❤️ Buscadores | 🌱 Enfocados | 💰 Intereses Económicos |
+|---------------------|:------------:|:-----------:|:-----------------------:|
+| ❤️ **Buscadores** | -0.20 | **0.85** | 0.00 |
+| 🌱 **Enfocados** | **-0.60** | 0.15 | Variable *(Slider: Incentivo Económico)* |
+| 💰 **Intereses Económicos** | 0.00 | 0.00 | 0.00 |
+
+---
+
+# 3. Justificación de cada relación
+
+### ❤️ Buscadores → ❤️ Buscadores (-0.20)
+
+Los buscadores presentan una ligera repulsión entre sí para evitar que se agrupen permanentemente. Esto favorece que cada uno continúe explorando el sistema y dirija su atención hacia las partículas enfocadas.
+
+---
+
+### ❤️ Buscadores → 🌱 Enfocados (+0.85)
+
+Esta es la relación de atracción más fuerte del sistema.
+
+Los buscadores intentan acercarse constantemente a las partículas enfocadas, representando la búsqueda activa de una conexión. Sin embargo, esta atracción no garantiza que el vínculo ocurra, ya que la respuesta de las partículas enfocadas es diferente.
+
+---
+
+### 🌱 Enfocados → ❤️ Buscadores (-0.60)
+
+Esta es la **relación asimétrica** principal del sistema.
+
+Mientras los buscadores sienten una fuerte atracción hacia los enfocados, estos responden con una fuerza de repulsión moderada cuando perciben una persecución constante.
+
+Esta diferencia entre ambas direcciones representa la tensión principal del proyecto: una misma interacción es interpretada de forma distinta por cada población.
+
+---
+
+### 🌱 Enfocados → 🌱 Enfocados (+0.15)
+
+Las partículas enfocadas sienten una atracción muy suave entre ellas.
+
+No buscan agruparse deliberadamente, pero esta pequeña fuerza aumenta la probabilidad de que permanezcan próximas durante algunos instantes.
+
+Cuando esa proximidad se mantiene el tiempo suficiente, el sistema interpreta el encuentro como una conexión espontánea.
+
+---
+
+### 🌱 Enfocados → 💰 Intereses Económicos (Variable)
+
+Esta relación depende completamente del deslizador **Incentivo Económico**.
+
+Cuando el valor del deslizador es bajo, la fuerza de atracción es prácticamente nula y las partículas enfocadas continúan su recorrido natural.
+
+A medida que aumenta el incentivo, las partículas enfocadas comienzan a modificar su trayectoria para acercarse a los intereses económicos.
+
+Esto permite observar cómo un factor externo puede reorganizar completamente las dinámicas del sistema sin modificar la naturaleza de las demás relaciones.
+
+---
+
+### 💰 Intereses Económicos
+
+Las partículas que representan intereses económicos no reaccionan ante ninguna otra población.
+
+No buscan, no persiguen y no generan fuerzas propias.
+
+Su única función consiste en convertirse en un punto de atracción potencial cuando el parámetro correspondiente aumenta.
+
+---
+
+## Relación asimétrica
+
+La contradicción central del sistema se encuentra en la relación entre Buscadores y Enfocados.
+
+Los Buscadores sienten una fuerte atracción hacia los Enfocados.
+
+Los Enfocados, en cambio, responden con una fuerza de repulsión.
+
+Esta asimetría produce un comportamiento emergente donde la insistencia dificulta la formación de conexiones, mientras que los encuentros espontáneos aparecen únicamente cuando las trayectorias coinciden sin persecución directa.
+
+De esta manera, el significado del sistema no depende del nombre de las partículas, sino de las reglas que gobiernan sus interacciones.
