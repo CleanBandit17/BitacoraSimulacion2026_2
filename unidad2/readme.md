@@ -162,3 +162,66 @@ Los Enfocados, en cambio, responden con una fuerza de repulsión.
 Esta asimetría produce un comportamiento emergente donde la insistencia dificulta la formación de conexiones, mientras que los encuentros espontáneos aparecen únicamente cuando las trayectorias coinciden sin persecución directa.
 
 De esta manera, el significado del sistema no depende del nombre de las partículas, sino de las reglas que gobiernan sus interacciones.
+
+
+# 4. Entradas
+
+Las entradas corresponden a los elementos capaces de modificar el comportamiento del sistema sin controlar directamente el movimiento de las partículas. En lugar de determinar el resultado final, estas variables alteran las reglas de interacción, permitiendo que el comportamiento colectivo emerja de manera diferente en cada ejecución.
+
+El sistema cuenta con cinco entradas principales: una interna (el tiempo) y cuatro controladas por el usuario mediante deslizadores.
+
+---
+
+## ⏳ Tiempo
+
+El tiempo constituye la entrada permanente del sistema.
+
+Cada frame actualiza la posición, velocidad y aceleración de todas las partículas, permitiendo que las fuerzas de atracción y repulsión produzcan nuevas configuraciones de manera continua. Gracias al paso del tiempo, el sistema nunca permanece estático y las relaciones evolucionan constantemente.
+
+---
+
+## ❤️ Intensidad de la búsqueda
+
+Este parámetro controla la fuerza con la que las partículas **Buscadoras** intentan acercarse a las partículas **Enfocadas**.
+
+Valores bajos producen búsquedas más moderadas, mientras que valores altos incrementan la intensidad de la persecución. Debido a la relación asimétrica del sistema, un aumento en la intensidad de búsqueda suele generar mayores comportamientos de rechazo y disminuye la probabilidad de que aparezcan conexiones espontáneas.
+
+Este parámetro no controla las trayectorias individuales, sino la intensidad de una de las fuerzas presentes en la matriz de relaciones.
+
+---
+
+## 😰 Miedo al rechazo
+
+Este deslizador modifica el comportamiento de las partículas **Buscadoras** frente a la posibilidad de ser rechazadas.
+
+Cuando su valor aumenta, las partículas reducen progresivamente la intensidad con la que persiguen a las partículas enfocadas y mantienen una mayor distancia antes de intentar aproximarse nuevamente. Como consecuencia, sus movimientos se vuelven más cautelosos y menos insistentes.
+
+El parámetro representa cómo una modificación en la estrategia de interacción puede alterar el comportamiento colectivo del sistema.
+
+---
+
+## 🌱 Desarrollo personal
+
+Este parámetro representa el grado de atención que las partículas **Enfocadas** dedican a su propio recorrido.
+
+Al aumentar su valor, estas partículas incrementan su velocidad y su capacidad de exploración, recorriendo regiones más amplias del espacio. Paralelamente, las partículas **Buscadoras** reducen ligeramente su actividad, permitiendo que el sistema favorezca encuentros menos condicionados por la persecución directa.
+
+Esta variable modifica el ritmo general del sistema sin imponer trayectorias específicas.
+
+---
+
+## 💰 Incentivo económico
+
+Este parámetro controla la intensidad de la atracción que sienten las partículas **Enfocadas** hacia las entidades que representan **Intereses Económicos**.
+
+Cuando el valor del deslizador es bajo, dichas entidades permanecen prácticamente ignoradas. A medida que el incentivo aumenta, las partículas enfocadas comienzan a modificar sus trayectorias para acercarse a ellas, reorganizando el comportamiento colectivo del sistema y reduciendo la frecuencia con la que ocurren encuentros espontáneos.
+
+De esta manera, el sistema explora cómo un incentivo externo puede modificar las dinámicas existentes sin alterar directamente las reglas fundamentales de las demás poblaciones.
+
+---
+
+## Reflexión sobre las entradas
+
+Ninguna de estas entradas controla directamente el resultado de la simulación. Cada una modifica únicamente uno o varios parámetros del sistema, como la intensidad de una fuerza, la velocidad de una población o la influencia de una entidad externa.
+
+Las configuraciones que emergen después de estos cambios siguen siendo consecuencia de la interacción continua entre todas las partículas, conservando el carácter generativo del proyecto y permitiendo que cada ejecución produzca resultados diferentes sin perder su identidad conceptual.
