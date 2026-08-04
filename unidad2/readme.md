@@ -454,3 +454,8 @@ El criterio de selección de la versión final se centró en encontrar un equili
 Finalmente, este proyecto permitió comprender que, dentro del diseño generativo, el significado no depende únicamente de la apariencia visual, sino principalmente de las reglas que gobiernan las interacciones. La metáfora del amor no está representada mediante símbolos, colores o ilustraciones, sino a través de un conjunto de comportamientos que emergen de la interacción entre las partículas. De esta manera, el sistema invita a interpretar cómo diferentes decisiones, prioridades e influencias externas pueden transformar la forma en que surgen los vínculos, sin imponer una única lectura sobre el fenómeno representado.
 
 > **Reflexión final:** Más que construir una simulación sobre el amor, este proyecto busca demostrar cómo un sistema de reglas simples puede dar lugar a comportamientos complejos y abiertos a la interpretación. La intención no es ofrecer una respuesta definitiva sobre las relaciones humanas, sino evidenciar que pequeñas variaciones en las condiciones de interacción son capaces de producir dinámicas colectivas completamente diferentes, manteniendo siempre la misma identidad conceptual.
+
+
+## Link del Código
+
+https://editor.p5js.org/ibanezherrerajuandavid17/sketches/vIoSbbIok
