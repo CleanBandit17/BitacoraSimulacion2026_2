@@ -225,3 +225,87 @@ De esta manera, el sistema explora cómo un incentivo externo puede modificar la
 Ninguna de estas entradas controla directamente el resultado de la simulación. Cada una modifica únicamente uno o varios parámetros del sistema, como la intensidad de una fuerza, la velocidad de una población o la influencia de una entidad externa.
 
 Las configuraciones que emergen después de estos cambios siguen siendo consecuencia de la interacción continua entre todas las partículas, conservando el carácter generativo del proyecto y permitiendo que cada ejecución produzca resultados diferentes sin perder su identidad conceptual.
+
+
+# 5. Reglas
+
+Las reglas describen el proceso mediante el cual el sistema actualiza el estado de cada partícula en cada frame. A partir de la repetición continua de estas reglas emergen todos los comportamientos observados durante la simulación, sin que exista una trayectoria predeterminada para ninguna partícula.
+
+Cada actualización sigue la siguiente secuencia:
+
+---
+
+## 1. Identificación del entorno
+
+Cada partícula analiza las entidades que se encuentran dentro de su radio de interacción. Únicamente las partículas cercanas pueden ejercer una influencia sobre su movimiento, haciendo que las relaciones dependan de la distancia entre ellas.
+
+---
+
+## 2. Consulta de la matriz de relaciones
+
+Una vez identificadas las partículas vecinas, el sistema consulta la matriz de relaciones para determinar el tipo de interacción correspondiente.
+
+Dependiendo del tipo de partícula y de la intensidad definida en la matriz, se calcula una fuerza de:
+
+- Atracción.
+- Repulsión.
+- Indiferencia.
+
+Estas fuerzas representan la intención de movimiento de cada entidad frente a las demás.
+
+---
+
+## 3. Aplicación de fuerzas externas
+
+Después de calcular las relaciones entre partículas, el sistema incorpora la influencia de las variables modificables por el usuario.
+
+Los deslizadores alteran parámetros como:
+
+- Intensidad de la búsqueda.
+- Miedo al rechazo.
+- Desarrollo personal.
+- Incentivo económico.
+
+Estas variables no modifican directamente la posición de las partículas, sino la intensidad de las fuerzas que actúan sobre ellas.
+
+---
+
+## 4. Actualización del movimiento
+
+La suma de todas las fuerzas genera una aceleración para cada partícula.
+
+Posteriormente se actualizan:
+
+- Velocidad.
+- Dirección.
+- Posición.
+
+Antes de mover cada partícula se aplica un factor de fricción y un límite de velocidad máxima, evitando aceleraciones infinitas y manteniendo un comportamiento estable durante toda la simulación.
+
+---
+
+## 5. Generación de conexiones emergentes
+
+Cuando dos partículas Enfocadas permanecen próximas durante un tiempo determinado sin haber existido una persecución directa entre ellas, el sistema interpreta este encuentro como una conexión.
+
+Las conexiones no constituyen una entidad independiente, sino un comportamiento emergente que aparece únicamente cuando las condiciones del sistema lo permiten.
+
+Estas conexiones son temporales y desaparecen después de algunos segundos, permitiendo que el sistema continúe evolucionando.
+
+---
+
+## 6. Repetición continua
+
+El proceso se repite en cada frame de la simulación.
+
+Como las posiciones cambian constantemente, también cambian las partículas que interactúan entre sí, generando nuevas configuraciones y comportamientos colectivos.
+
+No existe un estado final ni una solución única. El sistema permanece en evolución permanente, permitiendo que las dinámicas de atracción, rechazo y encuentro continúen emergiendo de manera diferente en cada ejecución.
+
+---
+
+## Resultado esperado
+
+La repetición constante de estas reglas permite que el comportamiento global del sistema no sea programado explícitamente, sino que emerja de la interacción local entre las partículas y de las modificaciones realizadas sobre sus parámetros.
+
+De esta manera, fenómenos como el rechazo, la formación de conexiones espontáneas o la influencia de incentivos externos no son animaciones predefinidas, sino consecuencias naturales de las reglas que gobiernan el sistema.
