@@ -459,3 +459,7 @@ Finalmente, este proyecto permitió comprender que, dentro del diseño generativ
 ## Link del Código
 
 https://editor.p5js.org/ibanezherrerajuandavid17/sketches/vIoSbbIok
+
+
+## Rúbrica
+
