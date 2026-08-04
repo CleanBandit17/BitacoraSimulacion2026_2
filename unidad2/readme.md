@@ -437,3 +437,20 @@ Aunque cada ejecución produce trayectorias, agrupaciones y conexiones diferente
 Las partículas continúan respondiendo a la misma matriz de relaciones, las conexiones siguen emergiendo únicamente a partir de encuentros espontáneos y los factores externos mantienen el mismo papel dentro del sistema.
 
 En consecuencia, la variabilidad no modifica la esencia del proyecto, sino que demuestra cómo un mismo conjunto de reglas puede producir una gran diversidad de comportamientos sin perder la intención de diseño.
+
+
+# 8. Curaduría y reflexión
+
+Durante el diseño del sistema se exploraron distintas formas de representar la construcción de vínculos mediante un sistema de partículas. Desde el inicio, el objetivo no fue ilustrar el amor de manera literal, sino traducir una idea abstracta en un conjunto de reglas capaces de producir comportamientos emergentes.
+
+Una de las primeras decisiones consistió en evitar que las conexiones fueran una población independiente de partículas. Inicialmente se planteó la posibilidad de crear una especie específica que representara los vínculos; sin embargo, esta alternativa fue descartada porque implicaba programar explícitamente el resultado. En su lugar, se decidió que las conexiones surgieran únicamente cuando las condiciones del sistema lo permitieran, convirtiéndolas en un comportamiento emergente y no en un elemento previamente diseñado.
+
+También se evaluó la cantidad de poblaciones necesarias para representar la metáfora. Se optó por trabajar con tres entidades principales —Buscadores, Enfocados e Intereses Económicos— debido a que permitían construir relaciones claras sin aumentar innecesariamente la complejidad del sistema. Cada entidad cumple un papel específico dentro de la dinámica general y su comportamiento puede justificarse directamente desde la intención conceptual del proyecto.
+
+Otro aspecto importante fue la incorporación de variables externas mediante deslizadores. En lugar de utilizarlos para controlar directamente el movimiento de las partículas, se decidió que modificaran únicamente parámetros internos como la intensidad de las fuerzas, la velocidad de ciertas poblaciones o la influencia de factores externos. Esta decisión conserva el carácter generativo del sistema, ya que el usuario modifica las condiciones bajo las cuales emergen los comportamientos, pero nunca determina el resultado final.
+
+El criterio de selección de la versión final se centró en encontrar un equilibrio entre estabilidad y variabilidad. Se descartaron configuraciones donde todas las partículas terminaban agrupándose rápidamente o, por el contrario, permanecían completamente separadas, ya que en ambos casos desaparecía la tensión que daba sentido a la propuesta. La versión elegida mantiene un estado de cambio continuo, donde pueden aparecer tanto encuentros como rechazos dependiendo de las condiciones del sistema.
+
+Finalmente, este proyecto permitió comprender que, dentro del diseño generativo, el significado no depende únicamente de la apariencia visual, sino principalmente de las reglas que gobiernan las interacciones. La metáfora del amor no está representada mediante símbolos, colores o ilustraciones, sino a través de un conjunto de comportamientos que emergen de la interacción entre las partículas. De esta manera, el sistema invita a interpretar cómo diferentes decisiones, prioridades e influencias externas pueden transformar la forma en que surgen los vínculos, sin imponer una única lectura sobre el fenómeno representado.
+
+> **Reflexión final:** Más que construir una simulación sobre el amor, este proyecto busca demostrar cómo un sistema de reglas simples puede dar lugar a comportamientos complejos y abiertos a la interpretación. La intención no es ofrecer una respuesta definitiva sobre las relaciones humanas, sino evidenciar que pequeñas variaciones en las condiciones de interacción son capaces de producir dinámicas colectivas completamente diferentes, manteniendo siempre la misma identidad conceptual.
