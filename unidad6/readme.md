@@ -1,7 +1,5 @@
 # Bitácora de Desarrollo - Unidad 6: Agentes Autónomos e Interpretación Visual
 
-## Proyecto: **Momentum & Tangente** (Diagramas de Inercia & Cronofotografía Vectorial)
-
 ## [Link al Simulador](https://cleanbandit17.github.io/Unidad6/)
 
 ## Concepto y Gramática Visual
